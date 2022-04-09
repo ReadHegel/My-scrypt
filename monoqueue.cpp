@@ -5,29 +5,29 @@ using namespace std;
 
 
 struct monoque{
-	queue <int> q; //typ danych nale¿y ustawiæ w tym miejscu 
+	queue <int> q; //typ danych naleÂ¿y ustawiÃ¦ w tym miejscu 
 	deque <int> dq;
 	
 	void insert(int value){
-    	q.push(value);
-    	while(!dq.empty() && dq.back()>value)	dq.pop_back(); //kolejka daje minimum ">", aby dawa³a maximum nale¿y zmieniæ znak na "<"
+    		q.push(value);
+    		while(!dq.empty() && dq.back()>value)	dq.pop_back(); //kolejka daje minimum ">", aby dawaÂ³a maximum naleÂ¿y zmieniÃ¦ znak na "<"
    		dq.push_back(value);
 	}
 	
 	void pop(){
 		if(q.empty())return;
-    	auto x = q.front(); q.pop(); 
-    	if(dq.front() == x)dq.pop_front(); 
+    		auto x = q.front(); q.pop(); 
+    		if(dq.front() == x)dq.pop_front(); 
 	}
 	
 	void clear(){
-    	dq.clear();
-    	while(!q.empty()) q.pop();  
+    		dq.clear();
+    		while(!q.empty()) q.pop();  
 	}
 		
 	int minn(){
 		if(q.empty())return -1;
-    	return dq.front();
+    		return dq.front();
 	}
 	
 	bool empty(){
