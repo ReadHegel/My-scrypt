@@ -2,10 +2,11 @@
 
 using namespace std;
 
-const int inf = 2147483646;
+
 
 struct SegTree{
 	
+	const int inf = 2147483646;
 	int leafcount = 1;
 	vector<int> t;
 	vector<int> lazy;
@@ -44,6 +45,7 @@ struct SegTree{
 	}
 	
 	int maxx1(int a, int b, int lo, int hi, int v){
+		Propagate(v);
 		if(b<a)return -inf;
 		if(a==lo && b==hi)return t[v];
 		int mid = (lo+hi)/2;
